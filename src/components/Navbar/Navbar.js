@@ -67,7 +67,9 @@ const Navbar = () => {
                                                     <Link to='/login'>Login</Link> :
                                                     <a onClick={handleSignOut}>Logout</a>
 
+
                                                 }
+
                                                 <div className="mega_menu jewelry">
                                                     <div className="mega_items jewelry">
                                                         <ul className="list">
@@ -79,42 +81,25 @@ const Navbar = () => {
 
 
 
-                                            <li className="items"><a href="#">pages</a>
+                                            <li className="items">{user && <Link to='/manage'>Manage Items</Link>}
                                                 <div className="mega_menu">
                                                     <div className="mega_top fix">
                                                         <div className="mega_items">
                                                             <h3><a href="#">Column1</a></h3>
                                                             <ul className="list">
-                                                                <li className="items"><a href="portfolio.html">Portfolio</a></li>
-                                                                <li className="items"><a href="portfolio-details.html">single portfolio </a></li>
-                                                                <li className="items"><a href="about.html">About Us </a></li>
-                                                                <li className="items"><a href="about-2.html">About Us 2</a></li>
-                                                                <li className="items"><a href="services.html">Service </a></li>
-                                                                <li className="items"><a href="my-account.html">my account </a></li>
-                                                            </ul>
-                                                        </div>
-                                                        <div className="mega_items">
-                                                            <h3><a href="#">Column2</a></h3>
-                                                            <ul className="list">
-                                                                <li className="items"><a href="blog.html">Blog </a></li>
+                                                                <li className=""><a href="portfolio.html">Portfolio</a></li>
 
                                                             </ul>
                                                         </div>
-                                                        <div className="mega_items">
-                                                            <h3><a href="#">Column3</a></h3>
-                                                            <ul className="list">
-                                                                <li className="items"><a href="contact.html">Contact</a></li>
-                                                                <li className="items"><a href="cart.html">cart</a></li>
-                                                                <li className="items"><a href="checkout.html">Checkout  </a></li>
-                                                                <li className="items"><a href="wishlist.html">Wishlist</a></li>
-                                                                <li className="items"><a href="login.html">Login</a></li>
-                                                            </ul>
-                                                        </div>
+
+
                                                     </div>
                                                 </div>
                                             </li>
 
-                                            <li className="items"><a href="blog.html">blog</a>
+                                            <li className="items">{user &&
+                                                <Link to='/add-item'>Add Items</Link>
+                                            }
                                                 <div className="mega_menu jewelry">
                                                     <div className="mega_items jewelry">
                                                         <ul className="list">
@@ -147,7 +132,9 @@ const Navbar = () => {
                                                     </div>
                                                 </div>
                                             </li>
-                                            <li className="items"><a href="shop.html">shop</a>
+                                            <li className="items">{user &&
+                                                <Link to='/myitems'>My Items</Link>
+                                            }
                                                 <div>
                                                     <div>
                                                         <ul className="list">
