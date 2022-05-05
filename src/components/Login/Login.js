@@ -1,13 +1,27 @@
 import React from 'react';
 import auth from '../../Firebase/firebase.init';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 const Login = () => {
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useSignInWithEmailAndPassword(auth);
+    const handleLoginForm = event => {
+        event.preventDefault();
+        const email = event.target.email.value;
+        const pass = event.target.password.value;
+        signInWithEmailAndPassword(email, pass);
+        alert('success login');
+    }
+
 
 
     return (
         <div className='w-50 mx-auto'>
-            <form >
+            <form onSubmit={handleLoginForm}>
                 <h3>Log In</h3>
                 <div className="mb-3">
                     <input
