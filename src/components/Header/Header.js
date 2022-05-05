@@ -7,7 +7,7 @@ const Header = () => {
 
         }}>
             <div className="row " style={{ height: '500px' }}>
-                <div className="col-6 header-content">
+                <div className="col-12 col-md-6 header-content">
                     <div>
                         <h2 className='text-danger'>Get 30% Off & Free Shipping</h2>
                         <h1>SUMMER SALE</h1>
@@ -17,7 +17,7 @@ const Header = () => {
                     </div>
 
                 </div>
-                <div className="col-6 header-img" style={{ height: '500px' }}>
+                <div className="col-12 col-md-6 header-img" style={{ height: '500px' }}>
                     <img className='img-fluid'
                         width='400px'
                         src="https://htmldemo.net/braga/braga/assets/img/bg/banner1.jpg" alt="" />

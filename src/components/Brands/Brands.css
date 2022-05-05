@@ -1,0 +1,7 @@
+.brand_active.owl-carousel .col-lg-2 {
+    min-width: 100%;
+}
+
+.brand_active.owl-carousel .single_brand img {
+    width: inherit;
+}
