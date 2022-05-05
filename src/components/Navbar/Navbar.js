@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import Header from '../Header/Header';
 // import { Container, Nav, NavDropdown } from 'react-bootstrap';
 import './Navbar.css'
 const Navbar = () => {
+
+
     const [toggleMenu, setToggleMenu] = useState(false);
     const [screenWidth, setScreenWidth] = useState(window.innerWidth);
     useEffect(() => {
@@ -52,12 +56,11 @@ const Navbar = () => {
                                                     </div>
                                                 </div>
                                             </li>
-                                            <li className="items"><a href="shop.html">shop</a>
+                                            <li className="items"><Link to='/login'>Login</Link>
                                                 <div className="mega_menu jewelry">
                                                     <div className="mega_items jewelry">
                                                         <ul className="list">
-                                                            <li className="items"><a href="shop-list.html">shop list</a></li>
-
+                                                            {/* <li className="items"><a href="shop-list.html">shop list</a></li> */}
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -287,6 +290,7 @@ const Navbar = () => {
 
             </div>
             {/* </div> */}
+            {/* <Header></Header> */}
         </div >
         // {/* <!--header end-- > */ }
 
