@@ -16,12 +16,11 @@ const Register = () => {
         const email = event.target.email.value;
         const pass = event.target.password.value;
         // console.log(email, pass);
-        createUserWithEmailAndPassword(email, pass);
+        createUserWithEmailAndPassword(email, pass, { sendEmailVerification: true });
         alert('success user');
-
     }
     if (error) {
-        errorElement = <p>{error.message}</p>
+        errorElement = <p className='text-danger'>{error.message}</p>
     }
     return (
         <div className='w-50 mx-auto'>

@@ -1,13 +1,19 @@
+import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
+import auth from '../../Firebase/firebase.init';
 import Header from '../Header/Header';
 // import { Container, Nav, NavDropdown } from 'react-bootstrap';
 import './Navbar.css'
 const Navbar = () => {
-
-
+    const [user, loading, error] = useAuthState(auth);
     const [toggleMenu, setToggleMenu] = useState(false);
     const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+    const handleSignOut = () => {
+        signOut(auth);
+    }
     useEffect(() => {
 
         const changeWidth = () => {
@@ -56,7 +62,12 @@ const Navbar = () => {
                                                     </div>
                                                 </div>
                                             </li>
-                                            <li className="items"><Link to='/login'>Login</Link>
+                                            <li className="items">
+                                                {!user ?
+                                                    <Link to='/login'>Login</Link> :
+                                                    <a onClick={handleSignOut}>Logout</a>
+
+                                                }
                                                 <div className="mega_menu jewelry">
                                                     <div className="mega_items jewelry">
                                                         <ul className="list">
