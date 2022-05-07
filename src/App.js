@@ -12,6 +12,7 @@ import UpdateFashion from './components/UpdateFashion/UpdateFashion';
 import HeaderNav from './components/HeaderNav/HeaderNav';
 import MainHeader from './components/MainHeader/MainHeader';
 import ManageItem from './components/ManageItem/ManageItem';
+import AddItem from './components/AddItem/AddItem';
 function App() {
   return (
     <div className="App">
@@ -23,6 +24,7 @@ function App() {
         <Route path='/home' element={<MainHeader></MainHeader>}></Route>
         <Route path='/inventory/:id' element={<UpdateFashion></UpdateFashion>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
+        <Route path='/addItem' element={<AddItem></AddItem>}></Route>
         <Route path='/manage' element={<ManageItem></ManageItem>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
       </Routes>

@@ -1,7 +1,8 @@
 
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-
+import { Card, ListGroup, ListGroupItem } from 'react-bootstrap';
+import { Link, useParams } from 'react-router-dom';
+import './UpdateFashion.css'
 const UpdateFashion = () => {
     const { id } = useParams();
     console.log('id', id);
@@ -45,54 +46,41 @@ const UpdateFashion = () => {
 
 
     return (
-        <div style={{ marginTop: '40px' }}>
-            <h1>Update {fashion.name}</h1>
+        <div className='w-50 mx-auto overflow' style={{ marginTop: '40px' }}>
+            {/* <h1>Update {fashion.name}</h1>
             <img src={fashion.img} alt="" /><br />
             <h3>Name : {fashion.name}</h3>
             <p>Price : ${fashion.price}</p>
             <p>Description : {fashion.description}</p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis dolorum ex praesentium soluta ut repudiandae minus fugiat dignissimos magnam! Quia perspiciatis, libero laboriosam hic consequuntur rem aperiam in laudantium omnis iste ab aliquam deleniti neque officiis sint veniam quidem! Provident voluptatum dicta numquam odit architecto omnis labore aliquam incidunt. Dolore.</p>
             <h4> Quantity :{count}</h4>
-            <button className="btn btn-success">Dedicate</button>
+            <button className="btn btn-success">Dedicate</button> */}
 
-            {/* <MDBCard style={{ width: '18rem' }}>
-                <MDBCardImage position='top' alt='...' src='https://mdbootstrap.com/img/new/standard/city/062.webp' />
-                <MDBCardBody>
-                    <MDBCardTitle>Card title</MDBCardTitle>
-                    <MDBCardText>
-                        Some quick example text to build on the card title and make up the bulk of the card's content.
-                    </MDBCardText>
-                </MDBCardBody>
-                <MDBListGroup flush>
-                    <MDBListGroupItem>Cras justo odio</MDBListGroupItem>
-                    <MDBListGroupItem>Dapibus ac facilisis in</MDBListGroupItem>
-                    <MDBListGroupItem>Vestibulum at eros</MDBListGroupItem>
-                </MDBListGroup>
-                <MDBCardBody>
-                    <MDBCardLink href='#'>Card link</MDBCardLink>
-                    <MDBCardLink href='#'>Card link</MDBCardLink>
-                </MDBCardBody>
-            </MDBCard> */}
+            <Card>
+                <Card.Img variant="top" src={fashion.img} />
+                <Card.Body>
+                    <Card.Title>{fashion.name}</Card.Title>
+                    <Card.Text>
+                        {fashion.description}
+                    </Card.Text>
+                </Card.Body>
+                <ListGroup className="list-group-flush">
+                    <ListGroupItem>Price : ${fashion.price}</ListGroupItem>
+                    <ListGroupItem>Quantity : {fashion.quantity}</ListGroupItem>
+                    <ListGroupItem>Vestibulum at eros</ListGroupItem>
+                </ListGroup>
+                <Card.Body>
+                    <Card.Link as={Link} to="" href="#">Declear</Card.Link>
+                </Card.Body>
+            </Card>
+            <form className="form-inline mt-5">
 
-            <CCard style={{ width: '18rem' }}>
-                <CCardImage orientation="top" src="/images/react.jpg" />
-                <CCardBody>
-                    <CCardTitle>Card title</CCardTitle>
-                    <CCardText>
-                        Some quick example text to build on the card title and make up the bulk of the card's content.
-                    </CCardText>
-                </CCardBody>
-                <CListGroup flush>
-                    <CListGroupItem>Cras justo odio</CListGroupItem>
-                    <CListGroupItem>Dapibus ac facilisis in</CListGroupItem>
-                    <CListGroupItem>Vestibulum at eros</CListGroupItem>
-                </CListGroup>
-                <CCardBody>
-                    <CCardLink href="#">Card link</CCardLink>
-                    <CCardLink href="#">Another link</CCardLink>
-                </CCardBody>
-            </CCard>
 
+                <label for="inputPassword2" class="sr-only">Password</label>
+                <input className="form-group mx-sm-3 mb-2" class="form-control" id="inputPassword2" placeholder="Update Quantity" />
+
+                <button type="submit" class="btn btn-primary mb-2">Update Quantity</button>
+            </form>
         </div>
     );
 };
