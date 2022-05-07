@@ -9,24 +9,23 @@ import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import FashionService from './components/FashionService/FashionService';
 import UpdateFashion from './components/UpdateFashion/UpdateFashion';
+import HeaderNav from './components/HeaderNav/HeaderNav';
+import MainHeader from './components/MainHeader/MainHeader';
+import ManageItem from './components/ManageItem/ManageItem';
 function App() {
   return (
     <div className="App">
-      <Navbar></Navbar>
-      <FashionService></FashionService>
+      {/* <Navbar></Navbar>
+     */}
+      <HeaderNav></HeaderNav>
       <Routes>
-        <Route path='/' element={<Header></Header>}></Route>
-        <Route path='/home' element={<Header></Header>}></Route>
+        <Route path='/' element={<MainHeader></MainHeader>}></Route>
+        <Route path='/home' element={<MainHeader></MainHeader>}></Route>
         <Route path='/inventory/:id' element={<UpdateFashion></UpdateFashion>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
+        <Route path='/manage' element={<ManageItem></ManageItem>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
-
-
       </Routes>
-
-      {/* <Header></Header> */}
-
-      {/* <Brands></Brands> */}
       <Footer></Footer>
     </div>
   );

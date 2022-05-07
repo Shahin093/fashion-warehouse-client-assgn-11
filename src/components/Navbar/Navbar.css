@@ -1,4 +1,4 @@
-nav {
+/* nav {
     position: fixed;
     top: 0;
     width: 100%;
@@ -18,12 +18,12 @@ nav {
 
 .btnn {
     display: none;
-    /* position: absolute; */
-    right: 10px;
-    top: 7px;
-    padding: 5px;
-    color: rgb(172, 25, 25);
-    font-size: 18px;
+   
+right: 10px;
+top: 7px;
+padding: 5px;
+color: rgb(172, 25, 25);
+font-size: 18px;
 }
 
 .items a {
@@ -60,3 +60,5 @@ nav {
         display: block;
     }
 }
+
+*/

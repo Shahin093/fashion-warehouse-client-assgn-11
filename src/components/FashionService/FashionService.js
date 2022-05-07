@@ -9,7 +9,7 @@ const FashionService = () => {
             .then(data => setService(data));
     }, [])
     return (
-        <div>
+        <div className='container-fluid'>
             <h2>Fashion Service {services.length}</h2>
             <div className="row">
                 {
