@@ -9,6 +9,20 @@ const ManageItem = () => {
             .then(data => setService(data));
     }, [])
 
+
+    const handleDelete = id => {
+        const proceedCheck = window.confirm('Are you sure ?');
+        if (proceedCheck) {
+            const url = `http://localhost:5000/service/${id}`;
+            fetch(url, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => console.log(data));
+            const remaining = services.filter(service => service._id !== id);
+            setService(remaining);
+        }
+    }
     return (
         <div>
             <h2>service ;{services.length}</h2>
@@ -27,13 +41,13 @@ const ManageItem = () => {
                 {
                     services.map(service =>
                         <>
-                            <tbody>
+                            <tbody key={service._id}>
                                 <tr className='design-td'>
                                     <img width={150} height={100} src={service.img} alt="" />
                                     <td className='mx-auto my-auto' width={"350px"}>{service.description}</td>
                                     <td className='mx-auto my-auto'>{service.quantity}</td>
                                     <td className='mx-auto'>{service.price}</td>
-                                    <button style={{ borderRadius: '20px' }} className='btn bg-danger text-white'>Delete</button>
+                                    <button onClick={() => handleDelete(service._id)} style={{ borderRadius: '20px' }} className='btn bg-danger text-white'>Delete</button>
                                 </tr>
 
                             </tbody>
@@ -43,7 +57,7 @@ const ManageItem = () => {
 
 
 
-        </div>
+        </div >
     );
 };
 

@@ -18,9 +18,9 @@ const AddItem = () => {
             .then(result => console.log(result));
     }
     return (
-        <div className='w-50 mx-auto'>
-            <h2>Please add a service</h2>
-            <form className='d-flex flex-column' onSubmit={handleSubmit(onSubmit)}>
+        <div className='p-5 w-50 mx-auto'>
+            <h2>Please add an Items</h2>
+            <form className='mt-5  d-flex flex-column' onSubmit={handleSubmit(onSubmit)}>
                 <input className='mb-2' placeholder='name' {...register("name")} />
                 <textarea className='mb-2' placeholder='description' {...register("description")} />
                 <input className='mb-2' placeholder='pirce' type="number" {...register("price",)} />
