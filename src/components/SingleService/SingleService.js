@@ -13,7 +13,7 @@ const SingleService = ({ service }) => {
                 <div className="card-body">
                     <h4 className='card-title'>{name}</h4>
                     <p className='card-text text-secondary'>{description}</p>
-                    <Link to={`inventory/${_id}`} className='btn btn-outline-success'>Update</Link>
+                    <Link to={`/inventory/${_id}`} className='btn btn-outline-success'>Update</Link>
                 </div>
             </div>
         </div>

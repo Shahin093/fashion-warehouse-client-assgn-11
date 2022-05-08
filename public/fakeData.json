@@ -1,56 +1,50 @@
 [
-    [
-        {
-            "name": "skdj",
-            "img": "https://htmldemo.net/braga/braga/assets/img/product/productbig2.jpg",
-            "description": "lorem50",
-            "price": 450,
-            "quentity": 6
-        }
-    ],
-    [
-        {
-            "name": "skdj",
-            "img": "https://htmldemo.net/braga/braga/assets/img/product/productbig2.jpg",
-            "description": "lorem50",
-            "price": 450,
-            "quentity": 6
-        }
-    ],
-    [
-        {
-            "name": "skdj",
-            "img": "https://htmldemo.net/braga/braga/assets/img/product/productbig2.jpg",
-            "description": "lorem50",
-            "price": 450,
-            "quentity": 6
-        }
-    ],
-    [
-        {
-            "name": "skdj",
-            "img": "https://htmldemo.net/braga/braga/assets/img/product/productbig2.jpg",
-            "description": "lorem50",
-            "price": 450,
-            "quentity": 6
-        }
-    ],
-    [
-        {
-            "name": "skdj",
-            "img": "https://htmldemo.net/braga/braga/assets/img/product/productbig2.jpg",
-            "description": "lorem50",
-            "price": 450,
-            "quentity": 6
-        }
-    ],
-    [
-        {
-            "name": "skdj",
-            "img": "https://htmldemo.net/braga/braga/assets/img/product/productbig2.jpg",
-            "description": "lorem50",
-            "price": 450,
-            "quentity": 6
-        }
-    ]
+    {
+        "price": "200",
+        "totalQuantity": "200",
+        "SuplierName": "Shakib",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea sunt quaerat ab natus ex error totam laudantium illum, id veniam!",
+        "name": "Meta Mordern Dress",
+        "img": "https://htmldemo.net/barly/assets/images/products/product-6.jpg"
+    },
+    {
+        "price": "400",
+        "totalQuantity": "300",
+        "SuplierName": "Mustafiz",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea sunt quaerat ab natus ex error totam laudantium illum, id veniam!",
+        "name": "Flower Printe Dress",
+        "img": "https://htmldemo.net/barly/assets/images/products/product-7.jpg"
+    },
+    {
+        "price": "400",
+        "totalQuantity": "250",
+        "SuplierName": "Nursafa",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea sunt quaerat ab natus ex error totam laudantium illum, id veniam!",
+        "name": "Stlye Mordern Dress",
+        "img": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MME73?wid=890&hei=890&fmt=jpeg&qlt=80&.v=1632861342000https://htmldemo.net/barly/assets/images/products/product-8.jpg     "
+    },
+    {
+        "price": "500",
+        "totalQuantity": "150",
+        "SuplierName": "Sazzad",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea sunt quaerat ab natus ex error totam laudantium illum, id veniam!",
+        "name": "Meta Mordern Dress",
+        "img": "https://htmldemo.net/barly/assets/images/products/product-12.jpg"
+    },
+    {
+        "price": "700",
+        "totalQuantity": "10",
+        "SuplierName": "Ashik",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea sunt quaerat ab natus ex error totam laudantium illum, id veniam!",
+        "name": "Women's  Shirts",
+        "img": "https://htmldemo.net/barly/assets/images/products/product-5.jpg"
+    },
+    {
+        "price": "550",
+        "totalQuantity": "200",
+        "SuplierName": "Rana",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea sunt quaerat ab natus ex error totam laudantium illum, id veniam!",
+        "name": "Women's Sleeve Shirts",
+        "img": "https://htmldemo.net/jesco/jesco/assets/images/product-image/6.jpg"
+    }
 ]

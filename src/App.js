@@ -13,6 +13,7 @@ import HeaderNav from './components/HeaderNav/HeaderNav';
 import MainHeader from './components/MainHeader/MainHeader';
 import ManageItem from './components/ManageItem/ManageItem';
 import AddItem from './components/AddItem/AddItem';
+import MyItem from './components/MyItem/MyItem';
 function App() {
   return (
     <div className="App">
@@ -27,6 +28,7 @@ function App() {
         <Route path='/addItem' element={<AddItem></AddItem>}></Route>
         <Route path='/manage' element={<ManageItem></ManageItem>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
+        <Route path='/myItems' element={<MyItem></MyItem>}></Route>
       </Routes>
       <Footer></Footer>
     </div>

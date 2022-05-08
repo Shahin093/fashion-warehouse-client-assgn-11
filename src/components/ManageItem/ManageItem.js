@@ -36,6 +36,8 @@ const ManageItem = () => {
                         <th>Description</th>
                         <th>Quantity</th>
                         <th>Price</th>
+                        <th>Suplier Name</th>
+                        <th><span className='text-success'>Yes</span> / <span className='text-danger'>No</span></th>
                     </tr>
                 </thead>
                 {
@@ -45,8 +47,9 @@ const ManageItem = () => {
                                 <tr className='design-td'>
                                     <img width={150} height={100} src={service.img} alt="" />
                                     <td className='mx-auto my-auto' width={"350px"}>{service.description}</td>
-                                    <td className='mx-auto my-auto'>{service.quantity}</td>
+                                    <td className='mx-auto my-auto'>{service.totalQuantity}</td>
                                     <td className='mx-auto'>{service.price}</td>
+                                    <td className='mx-auto'>{service.SuplierName}</td>
                                     <button onClick={() => handleDelete(service._id)} style={{ borderRadius: '20px' }} className='btn bg-danger text-white'>Delete</button>
                                 </tr>
 
