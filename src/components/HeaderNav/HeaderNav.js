@@ -36,8 +36,8 @@ const HeaderNav = () => {
                     <Nav className='ms-auto'>
                         {
                             !user ?
-                                <button className='btn btn-success'>Log In</button> :
-                                <button className='btn btn-success'>Log Out</button>
+                                <Link to="/login" className='btn btn-success'>Log In</Link> :
+                                <Link to='/home' onClick={handleSignOut} className='btn btn-success'>Log Out</Link>
                         }
 
                     </Nav>

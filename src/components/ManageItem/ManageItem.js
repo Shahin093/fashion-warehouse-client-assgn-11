@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
+import { toast, ToastContainer } from 'react-toastify';
 import './ManageItem.css'
 const ManageItem = () => {
     const [services, setService] = useState([]);
@@ -21,6 +22,9 @@ const ManageItem = () => {
                 .then(data => console.log(data));
             const remaining = services.filter(service => service._id !== id);
             setService(remaining);
+            toast.success("Success Notification !", {
+                position: toast.POSITION.TOP_CENTER
+            });
         }
     }
     return (
@@ -58,7 +62,7 @@ const ManageItem = () => {
 
             </Table>
 
-
+            <ToastContainer></ToastContainer>
 
         </div >
     );

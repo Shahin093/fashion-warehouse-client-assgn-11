@@ -77,7 +77,7 @@ const UpdateFashion = () => {
                     <ListGroupItem>Vestibulum at eros</ListGroupItem>
                 </ListGroup>
                 <Card.Body>
-                    <Card.Link onClick={handleDeclear} as={Link} to="" href="#" className='btn bg-success'>Declear</Card.Link>
+                    <Card.Link onClick={handleDeclear} as={Link} to="" href="#" className='btn bg-success'>delivered</Card.Link>
                 </Card.Body>
             </Card>
             <form onSubmit={handleUpdateUser} className="form-inline mt-5">

@@ -1,20 +1,42 @@
 import React from 'react';
 import auth from '../../Firebase/firebase.init';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
 const Login = () => {
+
+    const navigate = useNavigate();
+    const location = useLocation();
+    let from = location.state?.from?.pathname || '/';
+    let errorElement;
+
     const [
         signInWithEmailAndPassword,
         user,
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+    if (error) {
+
+        errorElement =
+            <p className='text-danger'>Error: {error?.message}</p>
+
+    }
+
+    if (user) {
+        navigate(from, { replace: true });
+    }
+
     const handleLoginForm = event => {
         event.preventDefault();
         const email = event.target.email.value;
         const pass = event.target.password.value;
         signInWithEmailAndPassword(email, pass);
-        alert('success login');
+        // alert('success login');
+        toast("Custom Style Notification with css class!", {
+            position: toast.POSITION.TOP_CENTER,
+            className: 'foo-bar'
+        });
     }
 
 
@@ -61,6 +83,7 @@ const Login = () => {
                     Forgot <a href="#">password?</a>
                 </p>
             </form>
+            <ToastContainer />
         </div>
     );
 };
