@@ -1,16 +1,18 @@
 import React from 'react';
 import { Button, Form } from 'react-bootstrap';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import auth from '../../Firebase/firebase.init';
 import './AddItem.css'
 const AddItem = () => {
+    const [user, loading, error] = useAuthState(auth);
     const { register, handleSubmit } = useForm();
 
     const onSubmit = (data) => {
-        console.log(data)
-        const url = `http://localhost:5000/services`
+        console.log(register('email'))
+        const url = `https://infinite-gorge-69495.herokuapp.com/services`
         fetch(url, {
             method: 'POST',
             headers: {
@@ -34,6 +36,7 @@ const AddItem = () => {
                 <input className='mb-2' placeholder='name' {...register("name")} />
                 <input className='mb-2' placeholder='SuplierName' {...register("SuplierName")} />
                 <input className='mb-2' placeholder='photo url' type="text" {...register("img",)} />
+                <input type="text" value={`${user.email}`} />
                 <input type="submit" value="New Item" />
             </form>
             <ToastContainer />

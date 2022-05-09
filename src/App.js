@@ -14,6 +14,7 @@ import MainHeader from './components/MainHeader/MainHeader';
 import ManageItem from './components/ManageItem/ManageItem';
 import AddItem from './components/AddItem/AddItem';
 import MyItem from './components/MyItem/MyItem';
+import NotFound from './components/NotFound/NotFound';
 function App() {
   return (
     <div className="App">
@@ -29,6 +30,7 @@ function App() {
         <Route path='/manage' element={<ManageItem></ManageItem>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
         <Route path='/myItems' element={<MyItem></MyItem>}></Route>
+        <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
     </div>

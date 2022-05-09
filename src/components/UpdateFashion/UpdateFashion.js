@@ -7,7 +7,7 @@ const UpdateFashion = () => {
     const { id } = useParams();
     const [fashion, setFashion] = useState({});
     useEffect(() => {
-        const url = `http://localhost:5000/service/${id}`;
+        const url = `https://infinite-gorge-69495.herokuapp.com/service/${id}`;
         // console.log("url ", url)
         fetch(url)
             .then(res => res.json())
@@ -23,7 +23,7 @@ const UpdateFashion = () => {
         console.log(quantity - 1);
         const totalQuantity = quantity - 1;
         const decQuantity = { totalQuantity };
-        fetch(`http://localhost:5000/service/${id}`, {
+        fetch(`https://infinite-gorge-69495.herokuapp.com/service/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -42,7 +42,7 @@ const UpdateFashion = () => {
         const quan = parseInt(event.target.quantity.value);
         const totalQuantity = quan + quantity;
         const user = { totalQuantity };
-        fetch(`http://localhost:5000/service/${id}`, {
+        fetch(`https://infinite-gorge-69495.herokuapp.com/service/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -55,7 +55,6 @@ const UpdateFashion = () => {
                 alert('user added successfully ');
                 event.target.reset();
             })
-
     }
 
 

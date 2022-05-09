@@ -5,7 +5,7 @@ import './ManageItem.css'
 const ManageItem = () => {
     const [services, setService] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch('https://infinite-gorge-69495.herokuapp.com/services')
             .then(res => res.json())
             .then(data => setService(data));
     }, [])
@@ -14,7 +14,7 @@ const ManageItem = () => {
     const handleDelete = id => {
         const proceedCheck = window.confirm('Are you sure ?');
         if (proceedCheck) {
-            const url = `http://localhost:5000/service/${id}`;
+            const url = `https://infinite-gorge-69495.herokuapp.com/service/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
