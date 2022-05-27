@@ -1,8 +1,9 @@
 import React from 'react';
 import auth from '../../Firebase/firebase.init';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
+import Loading from '../Loading/Loading';
 const Login = () => {
 
     const navigate = useNavigate();
@@ -16,14 +17,18 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
-    if (error) {
+    const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+    if (gLoading || loading) {
 
-        errorElement =
-            <p className='text-danger'>Error: {error?.message}</p>
+        return <Loading></Loading>
 
     }
+    if (error || gError) {
+        errorElement =
+            <p className='text-danger'>Error: {error?.message}</p>
+    }
 
-    if (user) {
+    if (user || gUser) {
         navigate(from, { replace: true });
     }
 
@@ -82,7 +87,9 @@ const Login = () => {
                     Create a <Link to='/register'>New Accout</Link><br />
                     Forgot <a href="#">password?</a>
                 </p>
+                <button onClick={() => signInWithGoogle()} className="btn btn-outline btn-success">Continue with Google</button>
             </form>
+            {errorElement}
             <ToastContainer />
         </div>
     );

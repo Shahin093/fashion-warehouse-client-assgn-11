@@ -1,9 +1,10 @@
 import React from 'react';
+// import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
+// import auth from '../../Firebase/firebase.init';
 import './SingleService.css'
 const SingleService = ({ service }) => {
-    const { _id, name, price, img, description } = service;
-    console.log('name:', name);
+    const { _id, name, img, description } = service;
     return (
         <div className='col-lg-4'>
             <div className=' card text-center'>

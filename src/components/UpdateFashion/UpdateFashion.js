@@ -2,25 +2,21 @@
 import React, { useEffect, useState } from 'react';
 import { Card, ListGroup, ListGroupItem } from 'react-bootstrap';
 import { Link, useParams } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
 import './UpdateFashion.css'
 const UpdateFashion = () => {
     const { id } = useParams();
     const [fashion, setFashion] = useState({});
     useEffect(() => {
         const url = `https://infinite-gorge-69495.herokuapp.com/service/${id}`;
-        // console.log("url ", url)
+
         fetch(url)
             .then(res => res.json())
             .then(data => setFashion(data));
     }, [fashion]);
-
     const quantity = parseInt(fashion.totalQuantity);
-    // console.log(quantity)
-    const [count, setCount] = useState(0);
-    // console.log('count ', count + quantity);
 
     const handleDeclear = () => {
-        console.log(quantity - 1);
         const totalQuantity = quantity - 1;
         const decQuantity = { totalQuantity };
         fetch(`https://infinite-gorge-69495.herokuapp.com/service/${id}`, {
@@ -33,7 +29,7 @@ const UpdateFashion = () => {
             .then(res => res.json())
             .then(data => {
                 console.log('success ', data);
-                alert('user added successfully ');
+                toast('user added successfully ');
             })
     }
 
@@ -52,18 +48,18 @@ const UpdateFashion = () => {
             .then(res => res.json())
             .then(data => {
                 console.log('success ', data);
-                alert('user added successfully ');
+                toast('user added successfully ');
                 event.target.reset();
             })
     }
 
 
     return (
-        <div className='w-50 mx-auto overflow' style={{ marginTop: '40px' }}>
+        <div className='w-50 h-full dis container mx-auto overflow' style={{ marginTop: '40px' }}>
 
 
-            <Card>
-                <Card.Img variant="top" src={fashion.img} />
+            <Card className='card-updateData' >
+                <Card.Img width='30px' variant="top" src={fashion.img} />
                 <Card.Body>
                     <Card.Title>{fashion.name}</Card.Title>
                     <Card.Text>
@@ -79,10 +75,12 @@ const UpdateFashion = () => {
                     <Card.Link onClick={handleDeclear} as={Link} to="" href="#" className='btn bg-success'>delivered</Card.Link>
                 </Card.Body>
             </Card>
-            <form onSubmit={handleUpdateUser} className="form-inline mt-5">
-                <input className="form-group mx-sm-3 mb-2" class="form-control" type="text" name="quantity" placeholder="Update Quantity" />
-                <button type="submit" class="btn btn-primary mb-2">Update Quantity</button>
+            <form onSubmit={handleUpdateUser} className="form-inline mt-10">
+                <input className="form-group mx-sm-3 form-control" type="text" name="quantity" placeholder="Update Quantity" />
+                <button type="submit" className="btn btn-primary mb-2">Update Quantity</button>
             </form>
+            <Link to='/manage'>Manage Items</Link>
+            <ToastContainer />
         </div>
     );
 };

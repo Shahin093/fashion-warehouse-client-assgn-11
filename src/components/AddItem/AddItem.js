@@ -11,7 +11,8 @@ const AddItem = () => {
     const { register, handleSubmit } = useForm();
 
     const onSubmit = (data) => {
-        console.log(register('email'))
+        // const demo = data, user.email;
+        console.log(data)
         const url = `https://infinite-gorge-69495.herokuapp.com/services`
         fetch(url, {
             method: 'POST',
@@ -36,7 +37,7 @@ const AddItem = () => {
                 <input className='mb-2' placeholder='name' {...register("name")} />
                 <input className='mb-2' placeholder='SuplierName' {...register("SuplierName")} />
                 <input className='mb-2' placeholder='photo url' type="text" {...register("img",)} />
-                <input type="text" value={`${user.email}`} />
+                <input type="text"{...register("email")} value={`${user?.email}`} />
                 <input type="submit" value="New Item" />
             </form>
             <ToastContainer />

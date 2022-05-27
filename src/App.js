@@ -1,6 +1,5 @@
 import './App.css';
 import Header from './components/Header/Header';
-import Navbar from './components/Navbar/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from './components/Footer/Footer';
 import Brands from './components/Brands/Brands';
@@ -15,6 +14,10 @@ import ManageItem from './components/ManageItem/ManageItem';
 import AddItem from './components/AddItem/AddItem';
 import MyItem from './components/MyItem/MyItem';
 import NotFound from './components/NotFound/NotFound';
+import RequiredAuth from './components/RequiredAuth/RequiredAuth';
+import Blogs from './components/Blogs/Blogs';
+import Contact from './components/Contact';
+import { ToastContainer } from 'react-toastify';
 function App() {
   return (
     <div className="App">
@@ -24,14 +27,22 @@ function App() {
       <Routes>
         <Route path='/' element={<MainHeader></MainHeader>}></Route>
         <Route path='/home' element={<MainHeader></MainHeader>}></Route>
-        <Route path='/inventory/:id' element={<UpdateFashion></UpdateFashion>}></Route>
+        {/* <Route path='/singleProduct' element={<UpdateFashion></UpdateFashion>}></Route> */}
+        <Route path='/contact' element={<Contact></Contact>}></Route>
+        <Route path='/inventory/:id' element={
+          <RequiredAuth>
+            <UpdateFashion></UpdateFashion>
+          </RequiredAuth>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
+
         <Route path='/addItem' element={<AddItem></AddItem>}></Route>
         <Route path='/manage' element={<ManageItem></ManageItem>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
-        <Route path='/myItems' element={<MyItem></MyItem>}></Route>
+        <Route path='/myItems/:email' element={<MyItem></MyItem>}></Route>
+        <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
+      <ToastContainer />
       <Footer></Footer>
     </div>
   );

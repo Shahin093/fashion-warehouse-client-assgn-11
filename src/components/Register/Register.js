@@ -1,9 +1,11 @@
 import React from 'react';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { Link } from 'react-router-dom';
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../Firebase/firebase.init';
+import Loading from '../Loading/Loading';
 
 const Register = () => {
+    const navigate = useNavigate();
     let errorElement = '';
     const [
         createUserWithEmailAndPassword,
@@ -11,6 +13,7 @@ const Register = () => {
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
+    const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const handleSubmitForm = event => {
         event.preventDefault();
         const email = event.target.email.value;
@@ -19,8 +22,16 @@ const Register = () => {
         createUserWithEmailAndPassword(email, pass, { sendEmailVerification: true });
         alert('success user');
     }
-    if (error) {
-        errorElement = <p className='text-danger'>{error.message}</p>
+
+    if (user || gUser) {
+        navigate('/home')
+    }
+
+    if (loading || gLoading) {
+        return <Loading></Loading>
+    }
+    if (error || gError) {
+        errorElement = <p className='text-danger'>{error?.message}</p>
     }
     return (
         <div className='w-50 mx-auto'>
@@ -73,6 +84,7 @@ const Register = () => {
                     {/* {/* Create a <Link to='/register'>New Accout</Link><br />} */}
                     <Link to='/login'>Login</Link>
                 </p>
+                <button onClick={() => signInWithGoogle()} className="btn btn-outline btn-success">Continue with Google</button>
             </form>
         </div>
     );

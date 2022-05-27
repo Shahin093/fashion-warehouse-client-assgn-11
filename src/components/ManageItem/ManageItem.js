@@ -29,7 +29,7 @@ const ManageItem = () => {
     }
     return (
         <div>
-            <h2>service ;{services.length}</h2>
+            <h2>service {services.length}</h2>
 
 
 
