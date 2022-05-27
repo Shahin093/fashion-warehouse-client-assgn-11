@@ -4,6 +4,7 @@ body {
 
 .card-updateData {
     height: 70rem;
+    margin-bottom: 20px;
 }
 
 
@@ -13,13 +14,13 @@ body {
 } */
 
 .card-body {
-    padding: 3rem 0 !important;
+    padding: 1rem 0 !important;
 
 }
 
 .cart-text {
-    font-size: 0.9rem;
-    padding: 0.4rem 1.9rem;
+    font-size: 0.1rem;
+    padding: 0rem 1.9rem;
 }
 
 /* .container-fluid .row {

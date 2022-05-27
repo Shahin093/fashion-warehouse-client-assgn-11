@@ -59,7 +59,7 @@ const UpdateFashion = () => {
 
 
             <Card className='card-updateData' >
-                <Card.Img width='30px' variant="top" src={fashion.img} />
+                <Card.Img variant="top" src={fashion.img} />
                 <Card.Body>
                     <Card.Title>{fashion.name}</Card.Title>
                     <Card.Text>
