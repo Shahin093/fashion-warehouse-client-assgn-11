@@ -1,6 +1,6 @@
 import React from 'react';
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import auth from '../../Firebase/firebase.init';
 import Loading from '../Loading/Loading';
 
@@ -21,6 +21,8 @@ const Register = () => {
         // console.log(email, pass);
         createUserWithEmailAndPassword(email, pass, { sendEmailVerification: true });
         alert('success user');
+
+        Navigate(`/home`);
     }
 
     if (user || gUser) {

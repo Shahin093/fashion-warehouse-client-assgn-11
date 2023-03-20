@@ -28,7 +28,7 @@ function App() {
         <Route path='/' element={<MainHeader></MainHeader>}></Route>
         <Route path='/home' element={<MainHeader></MainHeader>}></Route>
         {/* <Route path='/singleProduct' element={<UpdateFashion></UpdateFashion>}></Route> */}
-        <Route path='/contact' element={<Contact></Contact>}></Route>
+        {/* <Route path='/contact' element={<Contact></Contact>}></Route> */}
         <Route path='/inventory/:id' element={
           <RequiredAuth>
             <UpdateFashion></UpdateFashion>

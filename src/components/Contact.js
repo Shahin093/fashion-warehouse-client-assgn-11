@@ -1,9 +1,11 @@
 import React from 'react';
-
+import './Contact.css'
 const Contact = () => {
+
+
     return (
-        <div>
-            <section class="mb-5 container">
+        <div className='grid'>
+            {/* <section class="mb-5 container">
                 <h2 class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
 
                 <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you within
@@ -72,8 +74,45 @@ const Contact = () => {
 
                 </div>
 
-            </section>
-        </div>
+            </section> */}
+
+
+
+
+
+
+            {/* <header>
+                <h1 className='grid contact-heading'>Contact us</h1>
+            </header>
+
+            <div id="form">
+
+                <div class="fish" id="fish"></div>
+                <div class="fish" id="fish2"></div>
+
+                <form className='from' id="waterform" method="post">
+
+                    <div class="formgroup" id="name-form">
+                        <label for="name">Your name*</label>
+                        <input className="form-control" type="text" id="name" name="name" />
+                    </div>
+
+                    <div class="formgroup" id="email-form">
+                        <label for="email">Your e-mail*</label>
+                        <input className="form-control" type="email" id="email" name="email" />
+                    </div>
+
+                    <div class="formgroup" id="message-form">
+                        <label for="message">Your message</label>
+                        <textarea id="message" name="message"></textarea>
+                        <textarea id="message" name="message"></textarea>
+                    </div>
+
+                    <input type="submit" value="Send your message!" />
+                </form>
+            </div> */}
+
+        </div >
     );
 };
 

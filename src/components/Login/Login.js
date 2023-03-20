@@ -1,7 +1,7 @@
 import React from 'react';
 import auth from '../../Firebase/firebase.init';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import Loading from '../Loading/Loading';
 const Login = () => {
@@ -42,6 +42,8 @@ const Login = () => {
             position: toast.POSITION.TOP_CENTER,
             className: 'foo-bar'
         });
+        Navigate(`/home`);
+
     }
 
 

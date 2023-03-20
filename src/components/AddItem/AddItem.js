@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
+import { Navigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import auth from '../../Firebase/firebase.init';
@@ -12,8 +13,8 @@ const AddItem = () => {
 
     const onSubmit = (data) => {
         // const demo = data, user.email;
-        console.log(data)
-        const url = `https://infinite-gorge-69495.herokuapp.com/services`
+        // console.log(data)
+        const url = `https://fashion-warehouses.onrender.com/services`
         fetch(url, {
             method: 'POST',
             headers: {
@@ -26,6 +27,9 @@ const AddItem = () => {
         toast.success("Successfully Items Added Done !", {
             position: toast.POSITION.TOP_CENTER
         });
+
+        Navigate(`/home`);
+
     }
     return (
         <div className='p-5 w-75 mx-auto'>

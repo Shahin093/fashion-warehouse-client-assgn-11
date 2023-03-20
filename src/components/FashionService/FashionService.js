@@ -4,7 +4,7 @@ import SingleService from '../SingleService/SingleService';
 const FashionService = () => {
     const [services, setService] = useState([]);
     useEffect(() => {
-        fetch('https://infinite-gorge-69495.herokuapp.com/services')
+        fetch('https://fashion-warehouses.onrender.com/services')
             .then(res => res.json())
             .then(data => setService(data));
     }, [])
